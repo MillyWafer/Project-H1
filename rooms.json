@@ -1,0 +1,44 @@
+{
+"rooms": [
+	{
+		"id": 0,
+		"name": "Your Bedroom",
+		"sdescrip": "A small bedroom with a queen sized bed.",
+		"ldescrip": "The floor is carpeted and the walls are a pale blue. There is a large window with dark grey curtains on the north wall of the room. Your bedding matches the curtains over the window, the bed frame is sturdy and white. Next to your bed is a small nightstand with a Light Orb and Charging Block sitting atop it.",
+		"exits": [
+			{"dir": "E",
+			"room_id": 1}
+		]
+	},
+	{
+		"id": 1,
+		"name": "Hallway",
+		"sdescrip": "A short hallway.",
+		"ldescrip": "The floor is smooth and the walls are pale blue.",
+		"exits": [
+			{"dir": "W", "room_id": 0},
+			{"dir": "E", "room_id": 2},
+			{"dir": "S", "room_id": 3}
+			]
+	},
+	{
+		"id": 2,
+		"name": "Your Bathroom",
+		"sdescrip": "A small bathroom.",
+		"ldescrip": "There is a shower, a toilet, and a black countertop with a sink and mirror. There is a small window on the north wall. The floor is smooth and the walls are pale blue.",
+		"exits": [
+			{"dir": "W", "room_id": 1}
+			]
+	},
+	{
+		"id": 3,
+		"name": "Your Kitchen",
+		"sdescrip": "A simple kitchen.",
+		"ldescrip": "There are black countertops with a built in Heating Appliance and sink. There is a large white Cooling Appliance in the corner of the room. There is a small white table with two chairs in the center of the room. The floor is smooth and the walls are pale blue",
+		"exits": [
+			{"dir": "N", "room_id": 1},
+			{"dir": "E", "room_id": 4}
+		]
+	}
+]
+}
