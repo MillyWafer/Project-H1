@@ -33,7 +33,7 @@ while True:
 	room = rooms[room_id]
 	print_room(room_id)
 	
-	cmd = raw_input("%s: " % name)
+	cmd = raw_input("%s%s%s: " % (fg("chartreuse_1"), name, attr("reset")))
 	cmd = cmd.upper()
 	cmd = cmd.replace("NORTH", "N")
 	cmd = cmd.replace("SOUTH", "S")
