@@ -1,12 +1,12 @@
 
 {
-	"characters": [
-	{
-		"id": 0,
-		"name": "OVI518",
-		"nickname": "Ovis",
-		"descrip": "Your spousal unit."
-	}
+    "characters": [
+    {
+        "id": 0,
+        "name": "OVI518",
+        "nickname": "Ovis",
+        "descrip": "Your spousal unit."
+    }
 ]
 
 }
