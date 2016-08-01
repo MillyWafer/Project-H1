@@ -27,13 +27,13 @@ def print_room(room_id):
 
 room_id = 0
 name = names.get_name()
-print "\"Goodmorning, %s. Time to get ready for work.\"" % name
-print "You wake up in Your Bedroom. Your spousal unit is still asleep."
+print "%s%s%s" % (fg("pale_green_1b"), "\"Good morning, %s. Time to get ready for work.\"" % name, attr("reset"))
+print "You wake up in Your Bedroom. Your Spousal Unit is still asleep."
 while True:
 	room = rooms[room_id]
 	print_room(room_id)
 	
-	cmd = raw_input("%s%s%s: " % (fg("chartreuse_1"), name, attr("reset")))
+	cmd = raw_input("%s%s%s: " % (fg("green_3b"), name, attr("reset")))
 	cmd = cmd.upper()
 	cmd = cmd.replace("NORTH", "N")
 	cmd = cmd.replace("SOUTH", "S")
