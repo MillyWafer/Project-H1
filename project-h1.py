@@ -8,6 +8,8 @@ os.system("clear")
 rooms_json = open("rooms.json").read()
 rooms = json.loads(rooms_json)["rooms"]
 
+characters_json = open("characters.json").read()
+characters = json.loads(characters_json)["characters"]
 
 def print_room(room_id):
     room = rooms[room_id]
@@ -15,6 +17,10 @@ def print_room(room_id):
     print "%s%s%s%s" % (fg("red_3b"), attr("bold"),
                         room['name'], attr("reset"))
     print room['sdescrip']
+    print
+    for character in characters:
+        if character["room_id"] == room_id:
+            print "%s is here." % character["name"]
     print
     print "%s%s%s" % (fg("turquoise_2"), "Exits:", attr("reset"))
     dirs = {

@@ -5,7 +5,9 @@
         "id": 0,
         "name": "OVI518",
         "nickname": "Ovis",
-        "descrip": "Your spousal unit."
+        "descrip": "Your spousal unit.",
+        "color": "dodger_blue_2",
+        "room_id": 0
     }
 ]
 
