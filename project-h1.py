@@ -12,13 +12,15 @@ rooms = json.loads(rooms_json)["rooms"]
 def print_room(room_id):
     room = rooms[room_id]
     print
-    print "%s%s%s%s" % (fg("red_3b"), attr("bold"), room['name'], attr("reset"))
+    print "%s%s%s%s" % (fg("red_3b"), attr("bold"),
+                        room['name'], attr("reset"))
     print room['sdescrip']
     print
     print "%s%s%s" % (fg("turquoise_2"), "Exits:", attr("reset"))
     dirs = {
         "N": "North", "S": "South", "E": "East", "W": "West",
-        "NE": "Northeast","NW": "Northwest", "SE": "Southeast", "SW": "Southwest",
+        "NE": "Northeast", "NW": "Northwest",
+        "SE": "Southeast", "SW": "Southwest",
         "U": "Up", "D": "Down"
         }
     for exit in room["exits"]:
@@ -27,12 +29,13 @@ def print_room(room_id):
 
 room_id = 0
 name = names.get_name()
-print "%s%s%s" % (fg("pale_green_1b"), "\"Good morning, %s. Time to get ready for work.\"" % name, attr("reset"))
+print "%s%s%s" % (fg("pale_green_1b"), "\"Good morning, %s. "
+                  "Time to get ready for work.\"" % name, attr("reset"))
 print "You wake up in Your Bedroom. Your Spousal Unit is still asleep."
 while True:
     room = rooms[room_id]
     print_room(room_id)
-    
+
     cmd = raw_input("%s%s%s: " % (fg("green_3b"), name, attr("reset")))
     cmd = cmd.upper()
     cmd = cmd.replace("NORTH", "N")
