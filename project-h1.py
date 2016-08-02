@@ -29,7 +29,6 @@ def match_object(match):
 
 def print_room(room_id):
     room = rooms[room_id]
-    print
     print "%s%s%s%s" % (fg("red_3b"), attr("bold"),
                         room['name'], attr("reset"))
 
@@ -37,9 +36,13 @@ def print_room(room_id):
     sdescrip = re.sub("{OBJ(\d+)}", match_object, room['sdescrip'])
 
     print sdescrip
-    print
+    
+    space = True
     for character in characters:
         if character["room_id"] == room_id:
+            if space == True:
+                print
+                space = False
             print "%s%s%s is here." % (fg(character["color"]),
                                        character["name"], attr("reset"))
 
@@ -64,9 +67,12 @@ print ("%s\"Good morning, %s%s%s. Time to get ready for work.\"%s" %
        (chip_clr, player_clr, name, chip_clr, attr("reset")))
 
 print "You wake up in Your Bedroom. Your Spousal Unit is still asleep."
+prev_room_id = -1
 while True:
     room = rooms[room_id]
-    print_room(room_id)
+    if prev_room_id != room_id:
+        print_room(room_id)
+        prev_room_id = room_id
 
     cmd = raw_input("%s%s%s: " % (player_clr, name, attr("reset")))
     cmd = cmd.upper()
@@ -84,3 +90,5 @@ while True:
         ldescrip = re.sub("{OBJ(\d+)}", match_object, room['ldescrip'])
 
         print ldescrip
+
+    print
