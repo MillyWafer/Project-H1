@@ -28,7 +28,12 @@
     {
         "id": 5,
         "name": "Sleeping Pallet",
-        "descrip": "A place to sleep."
+        "descrip": "A padded comfortable place to plug in and sleep."
+    },
+    {
+        "id": 6,
+        "name": "Chiller",
+        "descrip": "An appliance that delays the decomposition of perishable food items."
     }
     ]
 }

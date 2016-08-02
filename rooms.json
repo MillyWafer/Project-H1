@@ -33,7 +33,7 @@
         "id": 3,
         "name": "Your Kitchen",
         "sdescrip": "A simple kitchen.",
-        "ldescrip": "There are black countertops with a built in Heating Appliance and {OBJ4}. There is a large white Cooling Appliance in the corner of the room. There is a small white table with two chairs in the center of the room. The floor is smooth and the walls are pale blue",
+        "ldescrip": "There are black countertops with a built in Heating Appliance and {OBJ4}. There is a large white Chiller in the corner of the room. There is a small white table with two chairs in the center of the room. The floor is smooth and the walls are pale blue",
         "exits": [
             {"dir": "N", "room_id": 1},
             {"dir": "E", "room_id": 4}
