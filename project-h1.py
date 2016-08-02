@@ -1,5 +1,6 @@
 import names
 import json
+import re
 import os
 from colored import fg, attr
 
@@ -11,16 +12,28 @@ rooms = json.loads(rooms_json)["rooms"]
 characters_json = open("characters.json").read()
 characters = json.loads(characters_json)["characters"]
 
+objects_json = open("objects.json").read()
+objects = json.loads(objects_json)["objects"]
+
+def match_object(match):
+    object_id = int(match.group(1))
+    return objects[object_id]['name']
+
 def print_room(room_id):
     room = rooms[room_id]
     print
     print "%s%s%s%s" % (fg("red_3b"), attr("bold"),
                         room['name'], attr("reset"))
-    print room['sdescrip']
+
+    # replace {OBJXXX} with object name in short description
+    sdescrip = re.sub("{OBJ(\d+)}", match_object, room['sdescrip'])
+
+    print sdescrip
     print
     for character in characters:
         if character["room_id"] == room_id:
-            print "%s is here." % character["name"]
+            print "%s%s%s is here." % (fg(character["color"]), character["name"], attr("reset"))
+
     print
     print "%s%s%s" % (fg("turquoise_2"), "Exits:", attr("reset"))
     dirs = {
@@ -58,4 +71,7 @@ while True:
         if cmd == exit["dir"]:
             room_id = exit["room_id"]
     if cmd == "L":
-        print room['ldescrip']
+        # replace {OBJXXX} with object name in long description
+        ldescrip = re.sub("{OBJ(\d+)}", match_object, room['ldescrip'])
+
+        print ldescrip

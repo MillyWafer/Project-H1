@@ -3,8 +3,8 @@
     {
         "id": 0,
         "name": "Your Bedroom",
-        "sdescrip": "A small bedroom with a queen sized bed.",
-        "ldescrip": "The floor is carpeted and the walls are a pale blue. There is a large window with dark grey curtains on the north wall of the room. Your bedding matches the curtains over the window, the bed frame is sturdy and white. Next to your bed is a small nightstand with a Light Orb and Charging Block sitting atop it.",
+        "sdescrip": "A small bedroom with a large {OBJ5}.",
+        "ldescrip": "The floor is carpeted and the walls are a pale blue. There is a large window with dark grey curtains on the north wall of the room. Your bedding matches the curtains over the window, the bed frame is sturdy and white. Next to your bed is a small nightstand with a {OBJ0} and Charging Block sitting atop it.",
         "exits": [
             {"dir": "E", "room_id": 1}
         ]

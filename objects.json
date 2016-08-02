@@ -1,0 +1,34 @@
+{
+    "objects": [
+    {
+        "id": 0,
+        "name": "Light Orb",
+        "descrip": "A spherical structure that emits diffused white light when activated."
+    },
+    {
+        "id": 1,
+        "name": "Charging Block",
+        "descrip": "A device that charges your Chip. Attatched to it is a long cord. Don't forget to plug in before you go to bed!"
+    },
+    {
+        "id": 2,
+        "name": "Body Cleanser",
+        "descrip": "A device that cleanses your body."
+    },
+    {
+        "id": 3,
+        "name": "Eliminator",
+        "descrip": "A place to eliminate bodily waste."
+    },
+    {
+        "id": 4,
+        "name": "Spout",
+        "descrip": "A place to cleanse your hands and get water."
+    },
+    {
+        "id": 5,
+        "name": "Sleeping Pallet",
+        "descrip": "A place to sleep."
+    }
+    ]
+}
