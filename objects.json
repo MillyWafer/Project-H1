@@ -3,7 +3,12 @@
     {
         "id": 0,
         "name": "Light Orb",
-        "descrip": "A spherical structure that emits diffused white light when activated."
+        "descrip": "A spherical structure that emits diffused white light when activated.",
+        "actions": [
+            {"action": "activate", "message": "Light Orb activated."},
+            {"action": "deactivate", "message": "Light Orb deactivated."}
+        ],
+        "room_id": 0
     },
     {
         "id": 1,

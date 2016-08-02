@@ -68,6 +68,22 @@ print ("%s\"Good morning, %s%s%s. Time to get ready for work.\"%s" %
 
 print "You wake up in Your Bedroom. Your Spousal Unit is still asleep."
 prev_room_id = -1
+
+room_actions = list()
+try:
+    for obj in objects:
+        if obj["room_id"] == room_id:
+            for action in obj["actions"]:
+                action_str = "%s %s" % (action["action"], obj["name"])
+                action_str = action_str.upper()
+
+                action_dict = {action_str: {"object_id": obj["id"], "action": action["action"]}}
+                room_actions.append(action_dict)
+except Exception:
+    pass
+
+# print room_actions
+
 while True:
     room = rooms[room_id]
     if prev_room_id != room_id:
@@ -90,5 +106,12 @@ while True:
         ldescrip = re.sub("{OBJ(\d+)}", match_object, room['ldescrip'])
 
         print ldescrip
+    for action in room_actions:
+        if cmd in action:
+            action_name = action[cmd]["action"]
+            object_id = action[cmd]["object_id"]
+            for obj_action in objects[object_id]["actions"]:
+                if obj_action["action"] == action_name:
+                    print obj_action["message"]
 
     print
