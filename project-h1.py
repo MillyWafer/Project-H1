@@ -15,9 +15,17 @@ characters = json.loads(characters_json)["characters"]
 objects_json = open("objects.json").read()
 objects = json.loads(objects_json)["objects"]
 
+
+def print_object(object_id):
+    obj = "%s%s%s" % (fg("purple_4a"), objects[object_id]['name'],
+                      attr("reset"))
+    return obj
+
+
 def match_object(match):
     object_id = int(match.group(1))
-    return objects[object_id]['name']
+    return print_object(object_id)
+
 
 def print_room(room_id):
     room = rooms[room_id]
@@ -32,7 +40,8 @@ def print_room(room_id):
     print
     for character in characters:
         if character["room_id"] == room_id:
-            print "%s%s%s is here." % (fg(character["color"]), character["name"], attr("reset"))
+            print "%s%s%s is here." % (fg(character["color"]),
+                                       character["name"], attr("reset"))
 
     print
     print "%s%s%s" % (fg("turquoise_2"), "Exits:", attr("reset"))
@@ -51,7 +60,7 @@ player_clr = fg("green_3b")
 
 room_id = 0
 name = names.get_name()
-print ("%s\"Good morning, %s%s%s. Time to get ready for work.\"%s" % 
+print ("%s\"Good morning, %s%s%s. Time to get ready for work.\"%s" %
        (chip_clr, player_clr, name, chip_clr, attr("reset")))
 
 print "You wake up in Your Bedroom. Your Spousal Unit is still asleep."
